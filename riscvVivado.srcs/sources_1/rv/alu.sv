@@ -6,11 +6,9 @@ module alu (
     input signed [31:0] operand_a,
     input signed [31:0] operand_b,
     output logic [31:0] result,
-    output              result_equal_zero
+    output logic        result_equal_zero
 );
-initial begin
-    result_equal_zero = 0;
-end
+
 always_comb begin
     if (alu_function == 5'b00001) begin
         result = operand_a + operand_b;
